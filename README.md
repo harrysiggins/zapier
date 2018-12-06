@@ -8,8 +8,8 @@ This analysis was conducted to better understand the relationship between Monthl
 **The repository consists of:**
 
 - README.md - a full description of the analysis from setup to findings.
-- MAU_SQL - the full set of SQL queries needed to explore and transform the original dataset, with commentary on specific queries.
-- Dashboard Images - screenshots from the dashboard I created for vizualization. Access to this dashboard in an interactive setting is described below.
+- MAU_SQL.sql - the full set of SQL queries needed to explore and transform the original dataset, with commentary on specific queries.
+- DashboardImages - screenshots from the dashboard I created for vizualization. Access to this dashboard in an interactive setting is described below.
 
 ### Prerequisites and Tools
 
