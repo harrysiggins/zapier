@@ -54,11 +54,26 @@ In this section I dive into 1) key parameters for the analysis, 2) how I explore
 
 #### Part 2: Data Exploration and Transformation
 
-Exploration and transformation was handled in DataGrip. Steps for this procedure are below:
+Exploration and transformation was handled in DataGrip. Steps for this procedure are below and detailed query explanation is at MAU_SQL:
 
 1. Create tasks_used_da_cleaned view to transfrom data based on key assumptions 1 and 2 above.
 2. Segment users into monthly and weekly cohorts. This will provide structure on how user bases interacted with the product over time.
-3. Identify time periods in which 
+3. Identify how many new users were added on a daily basis. This can give us insights into how new users interactions are changing over time.
+4. Transform table to show dates of the latest activity and following activity in the same row. This was done to show a date range for each user between each activity gap.
+5. Identify the number of days between each record of activity. Given our definition of activity, this gives us a column to see exactly which time periods the user was active or churn.
+5. For each activity gap, identify which are active, churn, or the last activity on record. If considered churn, calculate how many days within that activity gap would be considered churn.
+6. For each churn activity gap, present a date range of when the user would be considered churn.
+7. For each date in the study period, identify whether the user was active or churn on that day.
+8. Finally, aggregate the active and churn counts to see how many users were active and churn on a given day.
+
+All of this occured on the activity_detail view. This view was then aggregated to the activity_total_tracker view which shows totals of active, churn, and new users on a daily basis. Additionally, the month_cohort_breakdown and week_cohort_breakdown were created from activity_detail.
+
+#### Part 3: Analysis and Visualization
+
+At this stage, I connected the datawarehouse to AWS Quicksight and dove into two aspects of the analysis. First, I looked at the general trend of active and churn users over time. Second, I went one step further and looked at the activity of users by cohorts over time.
+
+
+
 
 
 
