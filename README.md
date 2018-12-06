@@ -72,6 +72,8 @@ All of this occured on the activity_detail view. This view was then aggregated t
 
 At this stage, I connected the datawarehouse to AWS Quicksight and dove into two aspects of the analysis. First, I looked at the general trend of active and churn users over time. Second, I went one step further and looked at the activity of users by cohorts over time.
 
+Based on the 
+
 
 
 
