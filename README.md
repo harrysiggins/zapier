@@ -101,7 +101,9 @@ Below are some additional analyses or questions that could be conducted to build
 2. How impactful new users are to uplifting activity and outweighing increases in churn
 3. Identifying cohorts by new product feature releases or improvements to existing products - visualize how that may impact churn and activity growth.
 
-#### Access to Dashboard
+#### Running SQL and Access to Dashboard
+
+The SQL scripts are in the MAU_SQL.sql file in the master branch of this repo. The file can be loaded into DataGrip and executed, however given the mass of data, creating views 1 by 1 may be best.
 
 Once given Access to QuickSight per email instructions:
 
