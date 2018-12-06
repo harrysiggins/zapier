@@ -72,7 +72,19 @@ All of this occured on the activity_detail view. This view was then aggregated t
 
 At this stage, I connected the datawarehouse to AWS Quicksight and dove into two aspects of the analysis. First, I looked at the general trend of active and churn users over time. Second, I went one step further and looked at the activity of users by cohorts over time.
 
-Based on the 
+***AWS QuickSight Dashboard***
+
+![alt text](https://github.com/harrysiggins/zapier/blob/master/DashboardImages/Dashboard_Whole.png)
+
+It should be noted that given the definition of being active, there will be no churn reflected within the first 28 days of the analysis.
+
+From the graph below, it is clear that there is clear growth in active users over time that then flattens out starting in February 2017. This is driven by active users beginning to churn or become inactive for some period of time. Interestingly enough, the growth rate for churn users is greater than active users - which with more data we could potentially see if churn users became greater than active users at any point in time. 
+
+![alt text](https://github.com/harrysiggins/zapier/blob/master/DashboardImages/Active%20vs%20Churn.png)
+
+This obviously doesn't tell the whole story, as user activity and churn behavior will undoubtedly change over time. By analyzing cohorts on a monthly basis, we can see how user activity changes over time. The table below shows how the total number of active users within a cohort was distributed over the study period. For example, 21.77% of all active periods from those in the first cohort occcured in that cohort's second month. Although different from a typical cohort analysis that shows activity relative to a starting point, this analysis shows across all cohorts that activity from users increases from the first month of usage through the second, and then decreases over time - either from decreased usage (loss of product awareness or churn).
+
+![alt text](https://github.com/harrysiggins/zapier/blob/master/DashboardImages/Cohort.png)
 
 
 
