@@ -86,7 +86,22 @@ This obviously doesn't tell the whole story, as user activity and churn behavior
 
 ![alt text](https://github.com/harrysiggins/zapier/blob/master/DashboardImages/Cohort.png)
 
+It is clear that there is a relationship between activity and churn. As users become active on the product, they are technically considered active for approximately their first month - however, activity within cohorts tends to increase into the second month. While that is the case, this is also the point where we see a steady increase in churn occur over time. Although active user growth does steady, it is still increasing with new users each day. Churn is natural in a SaaS product environment, and although unfortunate in this case, it is worth noting that the rate of churn is quite steady.
 
+#### Further Exploration
+
+Below are some additional analyses or questions that could be conducted to build upon and compliment this analysis:
+
+- Although there are multiple cohorts available in this analysis, the insights taken from the later cohorts is limited. Additional cohorts with more data from later months would help strengthen any conclusions from the analysis - especially when analyzing churn users who may become active in the future.
+
+- There could be a prediction layer built on top of this analysis that could take behavior from earlier cohorts and apply ML to later-cohort data to predict the chances that users will churn (either on gaps in activity or even number of tasks created).
+
+- With additional time, a more refined dashbaord with stronger analytics and more insights such as the ones listed below would be helpful for other team members:
+1. Cohorts by distribution of tasks over lifespan of user
+2. How impactful new users are to uplifting activity and outweighing increases in churn
+3. Identifying cohorts by new product feature releases or improvements to existing products - vizualize how that may impact churn and activity growth.
+
+#### Access to Dashboard
 
 
 
