@@ -1,7 +1,7 @@
 # Monthly Active User Analysis
 Submitted by: Harry Siggins
 
-This analysis was conducted to better understand the relationship between Monthly Active Users and churn from 01-01-2017 to 06-01-2017. This analysis required the use of SQL and one vizualization tool (details in Prerequisites below).
+This analysis was conducted to better understand the relationship between Monthly Active Users and churn from 01-01-2017 to 06-01-2017. This analysis required the use of SQL and one visualization tool (details in Prerequisites below).
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ This analysis was conducted to better understand the relationship between Monthl
 
 - README.md - a full description of the analysis from setup to findings.
 - MAU_SQL.sql - the full set of SQL queries needed to explore and transform the original dataset, with commentary on specific queries.
-- DashboardImages - screenshots from the dashboard I created for vizualization. Access to this dashboard in an interactive setting is described below.
+- DashboardImages - screenshots from the dashboard I created for visualization. Access to this dashboard in an interactive setting is described below.
 
 ### Prerequisites and Tools
 
@@ -17,11 +17,11 @@ Below are the tools I used to conduct this analysis and a short description on w
 
 - For data exploration and transformation, **DataGrip**. The tool is currently used within the Zapier organization and I have used it a handful of times before in prior analyses. The UI is clean and simple, and the integration into the data warehousing structure used for this analysis was fast.
 
-- For vizualization, **AWS QuickSight**. Given the intergration with the data warehouse structure used in the analysis, the setup was quick and the vizualizations were manageable. Other tools required long setups with slow interfaces, while AWS QuickSight was simple and ready to use out of the box.
+- For visualization, **AWS QuickSight**. Given the integration with the data warehouse structure used in the analysis, the setup was quick and the visualizations were manageable. Other tools required long setups with slow interfaces, while AWS QuickSight was simple and ready to use out of the box.
 
 ### Analysis
 
-In this section I dive into 1) key parameters for the analysis, 2) how I explored and transformed the data and 3) analyzed and vizualized my findings. Further insights on my SQL queries can be found in the MAU_SQL file, and the interactive dashboard access is listed below.
+In this section I dive into 1) key parameters for the analysis, 2) how I explored and transformed the data and 3) analyzed and visualized my findings. Further insights on my SQL queries can be found in the MAU_SQL file, and the interactive dashboard access is listed below.
 
 #### Part 1: Key Parameters and Assumptions
 
@@ -54,9 +54,9 @@ In this section I dive into 1) key parameters for the analysis, 2) how I explore
 
 #### Part 2: Data Exploration and Transformation
 
-Exploration and transformation was handled in DataGrip. Steps for this procedure are below and detailed query explanation is at MAU_SQL:
+Exploration and transformation were handled in DataGrip. Steps for this procedure are below and a detailed query explanation is at MAU_SQL:
 
-1. Create tasks_used_da_cleaned view to transfrom data based on key assumptions 1 and 2 above.
+1. Create tasks_used_da_cleaned view to transform data based on key assumptions 1 and 2 above.
 2. Segment users into monthly and weekly cohorts. This will provide structure on how user bases interacted with the product over time.
 3. Identify how many new users were added on a daily basis. This can give us insights into how new users interactions are changing over time.
 4. Transform table to show dates of the latest activity and following activity in the same row. This was done to show a date range for each user between each activity gap.
@@ -66,11 +66,11 @@ Exploration and transformation was handled in DataGrip. Steps for this procedure
 7. For each date in the study period, identify whether the user was active or churn on that day.
 8. Finally, aggregate the active and churn counts to see how many users were active and churn on a given day.
 
-All of this occured on the activity_detail view. This view was then aggregated to the activity_total_tracker view which shows totals of active, churn, and new users on a daily basis. Additionally, the month_cohort_breakdown and week_cohort_breakdown were created from activity_detail.
+All of this occurred on the activity_detail view. This view was then aggregated to the activity_total_tracker view which shows totals of active, churn, and new users on a daily basis. Additionally, the month_cohort_breakdown and week_cohort_breakdown were created from activity_detail.
 
 #### Part 3: Analysis and Visualization
 
-At this stage, I connected the datawarehouse to AWS Quicksight and dove into two aspects of the analysis. First, I looked at the general trend of active and churn users over time. Second, I went one step further and looked at the activity of users by cohorts over time.
+At this stage, I connected the data warehouse to AWS Quicksight and dove into two aspects of the analysis. First, I looked at the general trend of active and churn users over time. Second, I went one step further and looked at the activity of users by cohorts over time.
 
 ***AWS QuickSight Dashboard***
 
@@ -82,7 +82,7 @@ From the graph below, it is clear that there is clear growth in active users ove
 
 ![alt text](https://github.com/harrysiggins/zapier/blob/master/DashboardImages/Active%20vs%20Churn.png)
 
-This obviously doesn't tell the whole story, as user activity and churn behavior will undoubtedly change over time. By analyzing cohorts on a monthly basis, we can see how user activity changes over time. The table below shows how the total number of active users within a cohort was distributed over the study period. For example, 21.77% of all active periods from those in the first cohort occcured in that cohort's second month. Although different from a typical cohort analysis that shows activity relative to a starting point, this analysis shows across all cohorts that activity from users increases from the first month of usage through the second, and then decreases over time - either from decreased usage (loss of product awareness or churn).
+This obviously doesn't tell the whole story, as user activity and churn behavior will undoubtedly change over time. By analyzing cohorts on a monthly basis, we can see how user activity changes over time. The table below shows how the total number of active users within a cohort was distributed over the study period. For example, 21.77% of all active periods from those in the first cohort occurred in that cohort's second month. Although different from a typical cohort analysis that shows activity relative to a starting point, this analysis shows across all cohorts that activity from users increases from the first month of usage through the second, and then decreases over time - either from decreased usage (loss of product awareness or churn).
 
 ![alt text](https://github.com/harrysiggins/zapier/blob/master/DashboardImages/Cohort.png)
 
@@ -96,13 +96,16 @@ Below are some additional analyses or questions that could be conducted to build
 
 - There could be a prediction layer built on top of this analysis that could take behavior from earlier cohorts and apply ML to later-cohort data to predict the chances that users will churn (either on gaps in activity or even number of tasks created).
 
-- With additional time, a more refined dashbaord with stronger analytics and more insights such as the ones listed below would be helpful for other team members:
-1. Cohorts by distribution of tasks over lifespan of user
+- With additional time, a more refined dashboard with stronger analytics and more insights such as the ones listed below would be helpful for other team members:
+1. Cohorts by the distribution of tasks over a lifespan of the user
 2. How impactful new users are to uplifting activity and outweighing increases in churn
-3. Identifying cohorts by new product feature releases or improvements to existing products - vizualize how that may impact churn and activity growth.
+3. Identifying cohorts by new product feature releases or improvements to existing products - visualize how that may impact churn and activity growth.
 
 #### Access to Dashboard
 
+Once given Access to QuickSight per email instructions:
 
+- Ensure that location in top right corner US EAST (Ohio)
+- Dashboard is named 'Zapier - User Analysis'
 
 
